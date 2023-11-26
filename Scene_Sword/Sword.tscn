@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://buxoujec5uuaw"]
+
+[ext_resource type="Texture2D" uid="uid://df65iuxarhl4j" path="res://sword1.png" id="1_6tg2l"]
+[ext_resource type="Script" path="res://Scene_Sword/Sword.gd" id="1_wmfge"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_scdws"]
+
+[node name="Sword" type="Area2D"]
+texture_filter = 1
+script = ExtResource("1_wmfge")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(206, 148)
+scale = Vector2(1.02, 1)
+texture = ExtResource("1_6tg2l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+texture_filter = 1
+position = Vector2(210, 145)
+rotation = 0.71733
+shape = SubResource("CircleShape2D_scdws")
+one_way_collision_margin = 0.0
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
