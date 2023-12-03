@@ -48,9 +48,8 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, 15)
-
+# to change the animation of the player to the left if left button is press
 	move_and_slide()
-	
 	var isLeft = velocity.x <0
 	sprite_2d.flip_h = isLeft
 	
