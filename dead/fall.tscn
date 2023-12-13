@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bh8ai2br30sp6"]
+
+[ext_resource type="Script" path="res://dead/fall.gd" id="1_qfrui"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6871m"]
+size = Vector2(110, 37)
+
+[node name="Fall" type="Area2D"]
+script = ExtResource("1_qfrui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 3)
+shape = SubResource("RectangleShape2D_6871m")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

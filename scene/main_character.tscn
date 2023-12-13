@@ -82,7 +82,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5jx3f"]
 size = Vector2(21, 57)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D"]
 position = Vector2(312, 203)
 script = ExtResource("1_86so4")
 
@@ -97,3 +97,9 @@ autoplay = "default"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-68.5, 9.5)
 shape = SubResource("RectangleShape2D_5jx3f")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

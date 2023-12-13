@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bibc6etcu2pb6"]
+[gd_scene load_steps=17 format=3 uid="uid://bibc6etcu2pb6"]
 
 [ext_resource type="Texture2D" uid="uid://d2uh5hyt67kla" path="res://bg2.png" id="1_5petc"]
 [ext_resource type="Script" path="res://main.gd" id="1_hts3q"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://buxoujec5uuaw" path="res://Scene_Sword/Sword.tscn" id="5_5mars"]
 [ext_resource type="Script" path="res://Label.gd" id="7_lglqr"]
 [ext_resource type="PackedScene" uid="uid://pc7k8jgarqf1" path="res://Scene_Enemy/enemy.tscn" id="8_d474c"]
+[ext_resource type="PackedScene" uid="uid://bh8ai2br30sp6" path="res://dead/fall.tscn" id="10_52hrv"]
+[ext_resource type="PackedScene" uid="uid://dhsxb51gp5e1n" path="res://pass level/pass.tscn" id="10_mtofm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_halaq"]
 texture = ExtResource("2_dorve")
@@ -288,8 +290,10 @@ layer_0/tile_data = PackedInt32Array(2490368, 0, 5, 2555904, 0, 4, 2621440, 0, 5
 position = Vector2(101, 539)
 
 [node name="Label" type="Label" parent="."]
-offset_right = 69.0
-offset_bottom = 26.0
+offset_left = 31.0
+offset_top = 22.0
+offset_right = 100.0
+offset_bottom = 48.0
 label_settings = SubResource("LabelSettings_5i3ni")
 script = ExtResource("7_lglqr")
 
@@ -316,3 +320,9 @@ position = Vector2(1021, 246)
 
 [node name="Enemy7" parent="." instance=ExtResource("8_d474c")]
 position = Vector2(980, 481)
+
+[node name="Pass" parent="." instance=ExtResource("10_mtofm")]
+position = Vector2(1176, 496)
+
+[node name="Fall" parent="." instance=ExtResource("10_52hrv")]
+position = Vector2(598, 637)
