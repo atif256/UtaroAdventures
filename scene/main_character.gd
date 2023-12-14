@@ -18,14 +18,14 @@ var basic_att: bool = true
 
 
 func _physics_process(delta):
-	#label
-	#bar.text = "Collectibles: " + str(score / 20)
+
 	#animation
 	if (velocity.x > 1 || velocity.x < -1):
 		sprite_2d.animation = "running"
 	else:
-		sprite_2d.animation = "default"
-		
+		sprite_2d.animation = "basic attack"
+
+
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -43,11 +43,11 @@ func _physics_process(delta):
 			has_double_jumped = true
 
 	#To handle mouse click - perform basic attack using sword
-	if Input.is_action_pressed("Basic attack") and basic_att:
+	if Input.is_action_just_pressed("Basic attack") and basic_att:
 		print("attack with sword")
 		basic_att = false
+		$Timer.wait_time = 0.8
 		$Timer.start()
-
 
 
 	# Get the input direction and handle the movement/deceleration.
@@ -62,7 +62,6 @@ func _physics_process(delta):
 	move_and_slide()
 	var isLeft = velocity.x <0
 	sprite_2d.flip_h = isLeft
-	
 
 
 func _on_timer_timeout():
