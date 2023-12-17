@@ -128,7 +128,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gtym2")
 }],
-"loop": true,
+"loop": false,
 "name": &"basic attack",
 "speed": 10.0
 }, {
@@ -206,8 +206,10 @@ texture_filter = 1
 position = Vector2(-214, -122)
 scale = Vector2(1.085, 1.195)
 sprite_frames = SubResource("SpriteFrames_e58up")
-animation = &"basic attack"
+animation = &"jumping twice"
 autoplay = "idle with sword"
+frame = 1
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-213, -121)
